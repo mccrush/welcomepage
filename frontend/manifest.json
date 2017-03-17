@@ -1,0 +1,24 @@
+{
+   "app": {
+      "launch": {
+         "local_path": "index.html"
+      }
+   },
+   "chrome_url_overrides": {
+      "newtab": "index.html"
+   },
+   "description": "WelcomePage стартовая страница Google Chrome",
+   "icons": {
+      "128": "assets/icon_128.png",
+      "16": "assets/icon_16.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCx7DbAxwGO4yL8HmYnJ94wOlCMqY9thpq3hOecevn+J1lBXuN0qvC6Yp0mqKcrsBBEEP5nb8PmnSkzUCH4dFz2bf0sJX3MEFGz8FKaxY1sthT0J7Rt6POLo0lZKSt6Xv+P6t8pHjeS+3CoEFD+GAkhTDJtr3wnFg4wec1Hxl6KMQIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "38",
+   "name": "WelcomePage",
+   "offline_enabled": true,
+   "permissions": [ "unlimitedStorage", "notifications" ],
+   "short_name": "WelcomePage",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.0"
+}

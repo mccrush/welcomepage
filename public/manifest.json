@@ -1,0 +1,27 @@
+{
+  "chrome_url_overrides": {
+      "newtab": "index.html"
+   },
+  "manifest_version": 2,
+  "name": "WelcomePage",
+  "short_name": "WelcomePage",
+  "description": "WelcomePage стартовая страница Google Chrome",
+  "version": "2.2",
+  "minimum_chrome_version": "38",
+
+  "icons": {
+    "16": "assets/icon_16.png",
+    "128": "assets/icon_128.png"
+  },
+
+  "app": {
+    "launch": {
+		"local_path": "index.html"
+       }
+  },
+  "offline_enabled": true,
+  "permissions": [
+    "unlimitedStorage",
+    "notifications"
+  ]
+}
