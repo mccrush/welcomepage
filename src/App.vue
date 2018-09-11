@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HeaderMy msgmy="Crush 2"/>
+    <Header msgmy="Crush 2"/>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -8,13 +8,13 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
-import HeaderMy from './components/HeaderMy.vue';
+import Header from './components/Header.vue';
 
 export default {
   name: 'app',
   components: {
     HelloWorld,
-    HeaderMy
+    Header
   }
 };
 </script>
