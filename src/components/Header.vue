@@ -1,8 +1,8 @@
 <template>
   <div class="nav-scroller bg-white"> <!--  shadow-sm -->
       <nav class="nav justify-content-end">
-        <a class="nav-link" href="#">Почта</a>
-        <a class="nav-link" href="#">Картинки</a>
+        <a class="nav-link" href="https://mail.google.com/mail/?tab=wm">Почта</a>
+        <a class="nav-link" href="https://www.google.ru/imghp?hl=ru&tab=wi">Картинки</a>
         <form class="form-inline">
           <button class="btn btn-sm mr-sm-3 ml-sm-2 btn-light" type="button" data-toggle="collapse" href="#collapseLauncher" role="button" aria-expanded="false" aria-controls="collapseLauncher"></button>
         </form>   
