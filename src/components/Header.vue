@@ -4,7 +4,7 @@
         <a class="nav-link" href="#">Почта</a>
         <a class="nav-link" href="#">Картинки</a>
         <form class="form-inline">
-          <button class="btn btn-sm mr-sm-3 ml-sm-2 btn-light" type="button"></button>
+          <button class="btn btn-sm mr-sm-3 ml-sm-2 btn-light" type="button" data-toggle="collapse" href="#collapseLauncher" role="button" aria-expanded="false" aria-controls="collapseLauncher"></button>
         </form>   
       </nav>
   </div>

@@ -1,20 +1,23 @@
 <template>
   <div id="app">
-    <Header msgmy="Crush 2"/>
+    <Header msg="Crush 1"/>
+    <Launcher msg="Crush 2"/>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
 import Header from './components/Header.vue';
+import Launcher from './components/Launcher.vue';
+import HelloWorld from './components/HelloWorld.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-    Header
+    Header,
+    Launcher,
+    HelloWorld
   }
 };
 </script>
