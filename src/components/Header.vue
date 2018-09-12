@@ -14,7 +14,7 @@
 export default {
   name: 'Header',
   props: {
-    msgmy: String
+    msg: String
   }
 };
 </script>
@@ -24,7 +24,7 @@ a.nav-link {
   font-size: 14px;
   color: #6c757d;
   padding: 0.5rem 0.5rem;
-  transition-duration: 0.15s;
+  transition-duration: 0.3s;
 }
 
 a.nav-link:hover {
@@ -37,7 +37,7 @@ button.btn-light {
   height: 26px;
   background: url('/assets/ic_apps_black_24dp_1x.png') center center no-repeat;
   opacity: 0.5;
-  transition-duration: 0.15s;
+  transition-duration: 0.3s;
 }
 
 button.btn-light:hover {
