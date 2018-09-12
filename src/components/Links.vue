@@ -1,6 +1,6 @@
 <template>
-  <div id="logo"> <!--  shadow-sm -->
-      <img alt="Google" height="92" src="assets/googlelogo_color_272x92dp.png" width="272">
+  <div id="logo" class="shadow-sm bg-white"> <!--  shadow-sm -->
+      <h1>{{ msg }}</h1>
   </div>
 </template>
 

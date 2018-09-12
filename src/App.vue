@@ -3,10 +3,10 @@
     <Header/>
     <Launcher/>
     <div class="mb-auto"></div> 
-    <div class="border d-flex flex-column">
-      <Logo msg="Google 1" class="col-12 align-self-center"/>
-      <Logo msg="Google 2" class="col-6 align-self-center"/>
-      <Logo msg="Google 3" class="col-8 align-self-center"/>
+    <div class="d-flex flex-column"><!-- border  -->
+      <Logo msg="This is Logo" class="col-12 align-self-center"/>
+      <Search msg="This is Search" class="col-6 align-self-center"/>
+      <Links msg="This is Links" class="col-8 align-self-center"/>
     </div>
     <div class="mt-auto"></div>
     <!-- <img alt="Vue logo" src="./assets/logo.png">
@@ -18,7 +18,8 @@
 import Header from './components/Header.vue';
 import Launcher from './components/Launcher.vue';
 import Logo from './components/Logo.vue';
-import HelloWorld from './components/HelloWorld.vue';
+import Search from './components/Search.vue';
+import Links from './components/Links.vue';
 
 export default {
   name: 'app',
@@ -26,7 +27,8 @@ export default {
     Header,
     Launcher,
     Logo,
-    HelloWorld
+    Search,
+    Links
   }
 };
 </script>
