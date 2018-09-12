@@ -5,7 +5,7 @@
     <div class="mb-auto"></div> 
     <div class="d-flex flex-column"><!-- border  -->
       <Logo msg="This is Logo" class="col-12 align-self-center"/>
-      <Search msg="This is Search" class="col-6 align-self-center"/>
+      <Search msg="This is Search" class="col-5 align-self-center"/>
       <Links msg="This is Links" class="col-8 align-self-center"/>
     </div>
     <div class="mt-auto"></div>
