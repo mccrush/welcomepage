@@ -1,18 +1,10 @@
 <template>
-  <div id="linksWrap" class=""> <!--  shadow-sm -->
-      <!-- <h1>{{ msg }}</h1> -->
-      <Link v-for="i in 8" v-bind:key="i" msg="From Wrap"/>
-  </div>
+      <a href="#" class="link-item d-inline-block shadow-sm" >{{ msg }}</a>
 </template>
 
 <script>
-import Link from 'Link.vue';
-
 export default {
-  name: 'Linkswrap',
-  components: {
-    Link
-  },
+  name: 'Link',
   props: {
     msg: String
   },
@@ -26,8 +18,12 @@ export default {
 </script>
 
 <style scoped>
-div#linksWrap {
+a.link-item {
+  width: 154px;
+  height: 126px;
+  padding: 1px;
+  vertical-align: top;
   margin: 10px;
-  padding: 10px;
+  border-radius: 2px;
 }
 </style>

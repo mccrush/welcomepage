@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-scroller bg-white"> <!--  shadow-sm -->
+  <div class="nav-scroller bg-white shadow-sm"> <!--  shadow-sm -->
       <nav class="nav justify-content-end">
         <a class="nav-link" href="https://mail.google.com/mail/?tab=wm">Почта</a>
         <a class="nav-link" href="https://www.google.ru/imghp?hl=ru&tab=wi">Картинки</a>
