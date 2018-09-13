@@ -6,7 +6,9 @@
     <div class="d-flex flex-column"><!-- border  -->
       <Logo msg="This is Logo" class="col-12 align-self-center"/>
       <Search msg="This is Search" class="col-6 align-self-center"/>
-      <Linkswrap msg="This is Linkswrap" class="col-8 align-self-center"/>
+      <div id="link" class="col-8 align-self-center"> <!--  shadow-sm -->
+          <Link v-for="i in 8" v-bind:key="i" msg="From Wrap"/>
+      </div>
     </div>
     <div class="mt-auto"></div>
     <!-- <img alt="Vue logo" src="./assets/logo.png">
@@ -19,7 +21,7 @@ import Header from './components/Header.vue';
 import Launcher from './components/Launcher.vue';
 import Logo from './components/Logo.vue';
 import Search from './components/Search.vue';
-import Linkswrap from './components/Linkswrap.vue';
+import Link from './components/Link.vue';
 
 export default {
   name: 'app',
@@ -28,7 +30,7 @@ export default {
     Launcher,
     Logo,
     Search,
-    Linkswrap
+    Link
   }
 };
 </script>
@@ -52,5 +54,10 @@ export default {
 
 .mt-auto {
   margin-top: auto !important;
+}
+
+div#link {
+  margin: 10px;
+  padding: 10px;
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
-      <a href="#" class="link-item d-inline-block shadow-sm" >{{ msg }}</a>
+  <a href="#" class="link-item d-inline-block shadow-sm" >{{ msg }}</a>
 </template>
 
 <script>
 export default {
-  name: 'Link',
+  name: 'link',
   props: {
     msg: String
   },
