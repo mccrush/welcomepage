@@ -6,10 +6,10 @@
     <div class="title">
       {{ msg }}
     </div>
-    <div class="edit invisible" title="Изменить ссылку">
+    <div class="edit invisible" title="Изменить ссылку" v-on:click="evEdit">
 
     </div>
-    <div class="clear invisible" title="Удалить ссылку">
+    <div class="clear invisible" title="Удалить ссылку" v-on:click="evClear">
 
     </div>
     <img src="assets/tempImage.png" alt="Title img" class="thumb" width="154" height="96">
@@ -60,6 +60,12 @@ export default {
           }
         }
       }
+    },
+    evEdit: function() {
+      alert('evEdit');
+    },
+    evClear: function() {
+      alert('evClear');
     }
   }
 };
