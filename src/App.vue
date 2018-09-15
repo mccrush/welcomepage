@@ -4,10 +4,10 @@
     <Launcher/>
     <div class="mb-auto"></div> 
     <div class="d-flex flex-column"><!-- border  -->
-      <Logo msg="This is Logo" class="col-12 align-self-center"/>
-      <Search msg="This is Search" class="col-6 align-self-center"/>
+      <!-- <Logo msg="This is Logo" class="col-12 align-self-center"/>
+      <Search msg="This is Search" class="col-6 align-self-center"/> -->
       <div id="link" class="col-8 align-self-center"> <!--  shadow-sm -->
-          <Link v-for="i in 8" v-bind:key="i" msg="From Wrap"/>
+          <Link v-for="i in 8" v-bind:key="i" msg="From Wrap fromdfk litle big"/>
       </div>
     </div>
     <div class="mt-auto"></div>
