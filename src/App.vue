@@ -6,8 +6,8 @@
     <div class="d-flex flex-column"><!-- border  -->
       <!-- <Logo msg="This is Logo" class="col-12 align-self-center"/>
       <Search msg="This is Search" class="col-6 align-self-center"/> -->
-      <div id="link" class="col-8 align-self-center"> <!--  shadow-sm -->
-          <Link v-for="i in 8" v-bind:key="i" msg="From Wrap fromdfmm litle big"/>
+      <div id="links" class="col-8 align-self-center"> <!--  shadow-sm -->
+          <Links v-for="i in 8" v-bind:key="i" msg="From Wrap fromdfmm litle big"/>
       </div>
     </div>
     <div class="mt-auto"></div>
@@ -21,7 +21,7 @@ import Header from './components/Header.vue';
 import Launcher from './components/Launcher.vue';
 import Logo from './components/Logo.vue';
 import Search from './components/Search.vue';
-import Link from './components/Link.vue';
+import Links from './components/Links.vue';
 
 export default {
   name: 'app',
@@ -30,7 +30,7 @@ export default {
     Launcher,
     Logo,
     Search,
-    Link
+    Links
   }
 };
 </script>

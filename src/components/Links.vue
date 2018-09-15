@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'link',
+  name: 'links',
   props: {
     msg: String
   },
