@@ -1,22 +1,24 @@
 <template>
-  <a href="#" class="link-item d-inline-block shadow-sm" v-on:mouseover="showButs" v-on:mouseout="hideButs" title="">
+  <a href="#" class="link-item d-inline-block shadow-sm" v-on:click="goLink" v-on:mouseover="showButs" v-on:mouseout="hideButs" title="">
     <div class="icon">
       <img src="https://s2.googleusercontent.com/s2/favicons?domain_url=https://trello.com/b/wNz9Hbop/01-tasklist&amp;alt=s&amp;sz=32" class="icon-img" width="16" height="16" title="" alt="">
     </div>
     <div class="title">
       {{ msg }}
     </div>
-    <div class="edit invisible" title="Изменить ссылку" v-on:click="evEdit">
-
+    <div class="edit invisible" title="Изменить ссылку" v-on:click.self="evEdit" data-toggle="collapse" href="#collapseEditor" aria-expanded="false" aria-controls="collapseEditor">
     </div>
     <div class="clear invisible" title="Удалить ссылку" v-on:click="evClear">
-
     </div>
     <img src="assets/tempImage.png" alt="Title img" class="thumb" width="154" height="96">
   </a>
 </template>
 
 <script>
+function ale() {
+  alert('Griby');
+}
+
 export default {
   name: 'links',
   props: {
@@ -61,8 +63,24 @@ export default {
         }
       }
     },
+    goLink: function(event) {
+      let target = event.target;
+      if (target.localName == 'a') {
+        console.log(1, target.getAttribute('href'));
+      } else {
+        target = target.parentNode;
+        if (target.localName == 'a') {
+          console.log(2, target.getAttribute('href'));
+        } else {
+          target = target.parentNode;
+          if (target.localName == 'a') {
+            console.log(3, target.getAttribute('href'));
+          }
+        }
+      }
+    },
     evEdit: function() {
-      alert('evEdit');
+      //ale();
     },
     evClear: function() {
       alert('evClear');

@@ -11,6 +11,7 @@
       </div>
     </div>
     <div class="mt-auto"></div>
+    <Editor/>
     <!-- <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
@@ -22,6 +23,7 @@ import Launcher from './components/Launcher.vue';
 import Logo from './components/Logo.vue';
 import Search from './components/Search.vue';
 import Links from './components/Links.vue';
+import Editor from './components/Editor.vue';
 
 export default {
   name: 'app',
@@ -30,7 +32,8 @@ export default {
     Launcher,
     Logo,
     Search,
-    Links
+    Links,
+    Editor
   }
 };
 </script>
