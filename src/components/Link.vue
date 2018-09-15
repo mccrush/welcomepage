@@ -1,15 +1,15 @@
 <template>
-  <a href="#" class="link-item d-inline-block shadow-sm" >
+  <a href="#" class="link-item d-inline-block shadow-sm" v-on:mouseover="showButs" v-on:mouseout="hideButs" title="">
     <div class="icon">
       <img src="https://s2.googleusercontent.com/s2/favicons?domain_url=https://trello.com/b/wNz9Hbop/01-tasklist&amp;alt=s&amp;sz=32" class="icon-img" width="16" height="16" title="" alt="">
     </div>
     <div class="title">
       {{ msg }}
     </div>
-    <div class="edit">
+    <div class="edit invisible" title="Изменить ссылку">
 
     </div>
-    <div class="clear">
+    <div class="clear invisible" title="Удалить ссылку">
 
     </div>
     <img src="assets/tempImage.png" alt="Title img" class="thumb" width="154" height="96">
@@ -23,9 +23,43 @@ export default {
     msg: String
   },
   methods: {
-    setShadow: function(event) {
-      event.target.classList.toggle('shadow-sm');
-      event.target.classList.toggle('shadow');
+    showButs: function(event) {
+      let target = event.target;
+      if (target.localName == 'a') {
+        target.childNodes[2].classList.remove('invisible');
+        target.childNodes[3].classList.remove('invisible');
+      } else {
+        target = target.parentNode;
+        if (target.localName == 'a') {
+          target.childNodes[2].classList.remove('invisible');
+          target.childNodes[3].classList.remove('invisible');
+        } else {
+          target = target.parentNode;
+          if (target.localName == 'a') {
+            target.childNodes[2].classList.remove('invisible');
+            target.childNodes[3].classList.remove('invisible');
+          }
+        }
+      }
+    },
+    hideButs: function(event) {
+      let target = event.target;
+      if (target.localName == 'a') {
+        target.childNodes[2].classList.add('invisible');
+        target.childNodes[3].classList.add('invisible');
+      } else {
+        target = target.parentNode;
+        if (target.localName == 'a') {
+          target.childNodes[2].classList.add('invisible');
+          target.childNodes[3].classList.add('invisible');
+        } else {
+          target = target.parentNode;
+          if (target.localName == 'a') {
+            target.childNodes[2].classList.add('invisible');
+            target.childNodes[3].classList.add('invisible');
+          }
+        }
+      }
     }
   }
 };
@@ -49,23 +83,24 @@ div.icon {
   position: absolute;
   top: 6px;
   left: 6px;
-  ~outline: 1px solid rgb(0, 156, 228);
+  /* outline: 1px solid rgb(0, 156, 228);*/
 }
 div.title {
   width: 120px;
   height: 18px;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: left;
   position: absolute;
   top: 7px;
-  left: 20px;
-  ~outline: 1px solid rgb(0, 156, 228);
+  left: 28px;
   opacity: 0.9;
 }
 div.edit {
   width: 18px;
   height: 18px;
-  background: linear-gradient(to left, rgb(255, 255, 255) 60%, transparent);
+  background: #fff;
+  /*background: linear-gradient(to left, rgb(255, 255, 255) 60%, transparent);*/
   position: absolute;
   top: 6px;
   right: 24px;
