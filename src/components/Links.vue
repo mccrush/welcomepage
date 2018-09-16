@@ -10,7 +10,7 @@
     </div>
     <div class="clear invisible" title="Удалить ссылку" v-on:click="evClear">
     </div>
-    <img src="assets/tempImage.png" alt="Title img" class="thumb" width="154" height="96">
+    <img :src=linkFrom.thumb alt="Title img" class="thumb" width="154" height="96">
   </a>
 </template>
 
@@ -108,6 +108,7 @@ a.link-item {
   border-radius: 2px;
   font-size: 12px;
   color: #343a40;
+  background: #f8f9fa;
 }
 div.icon {
   width: 18px;
@@ -132,7 +133,7 @@ div.title {
 div.edit {
   width: 18px;
   height: 18px;
-  background: #fff;
+  background: #f8f9fa; /* #fff; */
   /*background: linear-gradient(to left, rgb(255, 255, 255) 60%, transparent);*/
   position: absolute;
   top: 6px;
@@ -159,7 +160,7 @@ div.edit::after {
 div.clear {
   width: 18px;
   height: 18px;
-  background: #fff;
+  background: #f8f9fa; /* #fff; */
   position: absolute;
   top: 6px;
   right: 6px;
