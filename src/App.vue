@@ -7,7 +7,7 @@
       <!-- <Logo msg="This is Logo" class="col-12 align-self-center"/>
       <Search msg="This is Search" class="col-6 align-self-center"/> -->
       <div id="links" class="col-8 align-self-center"> <!--  shadow-sm -->
-          <Links v-for="i in 8" v-bind:key="i" msg="From Wrap fromdfmm litle big"/>
+          <Links v-for="link in listLinks" :key="link.id" :linkFrom="link"/>
       </div>
     </div>
     <div class="mt-auto"></div>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { loadList } from './components/storage.js';
 import Header from './components/Header.vue';
 import Launcher from './components/Launcher.vue';
 import Logo from './components/Logo.vue';
@@ -27,6 +28,11 @@ import Editor from './components/Editor.vue';
 
 export default {
   name: 'app',
+  data: function() {
+    return {
+      listLinks: loadList()
+    };
+  },
   components: {
     Header,
     Launcher,

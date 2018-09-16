@@ -1,10 +1,10 @@
 <template>
-  <a href="#" class="link-item d-inline-block shadow-sm" v-on:click="goLink" v-on:mouseover="showButs" v-on:mouseout="hideButs" title="">
+  <a :href=linkFrom.href :id=linkFrom.id class="link-item d-inline-block shadow-sm" v-on:click="goLink" v-on:mouseover="showButs" v-on:mouseout="hideButs" title="">
     <div class="icon">
-      <img src="https://s2.googleusercontent.com/s2/favicons?domain_url=https://trello.com/b/wNz9Hbop/01-tasklist&amp;alt=s&amp;sz=32" class="icon-img" width="16" height="16" title="" alt="">
+      <img :src=linkFrom.icon class="icon-img" width="16" height="16" title="" alt="">
     </div>
     <div class="title">
-      {{ msg }}
+      {{ linkFrom.title }}
     </div>
     <div class="edit invisible" title="Изменить ссылку" v-on:click.self="evEdit" data-toggle="collapse" href="#collapseEditor" aria-expanded="false" aria-controls="collapseEditor">
     </div>
@@ -21,8 +21,11 @@ function ale() {
 
 export default {
   name: 'links',
-  props: {
-    msg: String
+  props: ['linkFrom'],
+  data: function() {
+    return {
+      tecId: '0'
+    };
   },
   methods: {
     showButs: function(event) {
@@ -30,16 +33,22 @@ export default {
       if (target.localName == 'a') {
         target.childNodes[2].classList.remove('invisible');
         target.childNodes[3].classList.remove('invisible');
+        this.tecId = target.getAttribute('id');
+        console.log(this.tecId);
       } else {
         target = target.parentNode;
         if (target.localName == 'a') {
           target.childNodes[2].classList.remove('invisible');
           target.childNodes[3].classList.remove('invisible');
+          this.tecId = target.getAttribute('id');
+          console.log(this.tecId);
         } else {
           target = target.parentNode;
           if (target.localName == 'a') {
             target.childNodes[2].classList.remove('invisible');
             target.childNodes[3].classList.remove('invisible');
+            this.tecId = target.getAttribute('id');
+            console.log(this.tecId);
           }
         }
       }
