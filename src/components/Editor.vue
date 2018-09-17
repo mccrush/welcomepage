@@ -1,5 +1,5 @@
 <template>
-  <div class="collapse shadow-sm position-absolute bg-white shadow-lg" id="collapseEditor">
+  <div class="collapse position-absolute bg-white shadow-lg" id="collapseEditor">
       <ul id="listApps2">
         <li class="list-item d-inline-block" v-for="i in 7" v-bind:key=i><a href="#" class="item-a">Item {{ i }}</a></li>
       </ul> 

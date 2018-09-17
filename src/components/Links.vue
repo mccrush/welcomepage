@@ -1,17 +1,19 @@
 <template>
-  <a :href=linkFrom.href :id=linkFrom.id class="link-item d-inline-block shadow-sm" v-on:click="goLink" v-on:mouseover="showButs" v-on:mouseout="hideButs" title="">
+  <div :href=linkFrom.href :id=linkFrom.id class="link-item d-inline-block shadow-sm" v-on:click="goLink" v-on:mouseover="showButs" v-on:mouseout="hideButs" :title=linkFrom.title>
     <div class="icon">
       <img :src=linkFrom.icon class="icon-img" width="16" height="16" title="" alt="">
     </div>
     <div class="title">
       {{ linkFrom.title }}
     </div>
+    <!-- <div class="edit invisible" title="Изменить ссылку" v-on:click.self="evEdit">
+    </div> -->
     <div class="edit invisible" title="Изменить ссылку" v-on:click.self="evEdit" data-toggle="collapse" href="#collapseEditor" aria-expanded="false" aria-controls="collapseEditor">
     </div>
-    <div class="clear invisible" title="Удалить ссылку" v-on:click="evClear">
+    <div class="clear invisible" title="Удалить ссылку" v-on:click.self="evClear">
     </div>
-    <img :src=linkFrom.thumb alt="Title img" class="thumb" width="154" height="96">
-  </a>
+    <img :src=linkFrom.thumb :alt=linkFrom.title class="thumb" width="154" height="96">
+  </div>
 </template>
 
 <script>
@@ -30,21 +32,22 @@ export default {
   methods: {
     showButs: function(event) {
       let target = event.target;
-      if (target.localName == 'a') {
+
+      if (target.classList[0] == 'link-item') {
         target.childNodes[2].classList.remove('invisible');
         target.childNodes[3].classList.remove('invisible');
         this.tecId = target.getAttribute('id');
         console.log(this.tecId);
       } else {
         target = target.parentNode;
-        if (target.localName == 'a') {
+        if (target.classList[0] == 'link-item') {
           target.childNodes[2].classList.remove('invisible');
           target.childNodes[3].classList.remove('invisible');
           this.tecId = target.getAttribute('id');
           console.log(this.tecId);
         } else {
           target = target.parentNode;
-          if (target.localName == 'a') {
+          if (target.classList[0] == 'link-item') {
             target.childNodes[2].classList.remove('invisible');
             target.childNodes[3].classList.remove('invisible');
             this.tecId = target.getAttribute('id');
@@ -55,17 +58,17 @@ export default {
     },
     hideButs: function(event) {
       let target = event.target;
-      if (target.localName == 'a') {
+      if (target.classList[0] == 'link-item') {
         target.childNodes[2].classList.add('invisible');
         target.childNodes[3].classList.add('invisible');
       } else {
         target = target.parentNode;
-        if (target.localName == 'a') {
+        if (target.classList[0] == 'link-item') {
           target.childNodes[2].classList.add('invisible');
           target.childNodes[3].classList.add('invisible');
         } else {
           target = target.parentNode;
-          if (target.localName == 'a') {
+          if (target.classList[0] == 'link-item') {
             target.childNodes[2].classList.add('invisible');
             target.childNodes[3].classList.add('invisible');
           }
@@ -74,22 +77,41 @@ export default {
     },
     goLink: function(event) {
       let target = event.target;
-      if (target.localName == 'a') {
-        console.log(1, target.getAttribute('href'));
+      if (target.classList[0] == 'edit') {
+        window.location.href = '#';
       } else {
-        target = target.parentNode;
-        if (target.localName == 'a') {
-          console.log(2, target.getAttribute('href'));
+        if (target.classList[0] == 'link-item') {
+          if (target.getAttribute('href') !== '#') {
+            window.location.href = target.getAttribute('href');
+          } else {
+            console.log(1, target.getAttribute('href'));
+          }
         } else {
           target = target.parentNode;
-          if (target.localName == 'a') {
-            console.log(3, target.getAttribute('href'));
+          if (target.classList[0] == 'link-item') {
+            if (target.getAttribute('href') !== '#') {
+              window.location.href = target.getAttribute('href');
+            } else {
+              console.log(1, target.getAttribute('href'));
+            }
+          } else {
+            target = target.parentNode;
+            if (target.classList[0] == 'link-item') {
+              if (target.getAttribute('href') !== '#') {
+                window.location.href = target.getAttribute('href');
+              } else {
+                console.log(1, target.getAttribute('href'));
+              }
+            }
           }
         }
       }
     },
     evEdit: function() {
-      //ale();
+      console.log('yes edit Call');
+
+      //return true;
+      //document.getElementById('collapseEditor').classList.remove('collapse');
     },
     evClear: function() {
       alert('evClear');
@@ -99,16 +121,16 @@ export default {
 </script>
 
 <style scoped>
-a.link-item {
+div.link-item {
   width: 154px;
   height: 126px;
-  display: inline-block;
   position: relative;
-  margin: 8px 8px 8px 8px;
+  margin: 8px;
   border-radius: 2px;
   font-size: 12px;
   color: #343a40;
   background: #f8f9fa;
+  cursor: pointer;
 }
 div.icon {
   width: 18px;

@@ -8,7 +8,7 @@ export function loadList() {
   }, {
     id: 2,
     title: "My Title 22",
-    href: "http://google.com",
+    href: "#",
     icon: "https://s2.googleusercontent.com/s2/favicons?domain_url=https://trello.com/b/wNz9Hbop/01-tasklist&amp;alt=s&amp;sz=32",
     thumb: "https://mini.s-shot.ru/1024x768/JPEG/154/Z200/?mccrush.ru"
   }, {
