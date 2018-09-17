@@ -1,17 +1,17 @@
 <template>
   <div id="app" class="cover-container d-flex flex-column h-100">
     <Header/>
-    <Launcher/>
     <div class="mb-auto"></div> 
     <div class="d-flex flex-column"><!-- border  -->
-      <!-- <Logo msg="This is Logo" class="col-12 align-self-center"/>
-      <Search msg="This is Search" class="col-6 align-self-center"/> -->
+      <Logo msg="This is Logo" class="col-12 align-self-center"/>
+      <!-- <Search msg="This is Search" class="col-6 align-self-center"/> -->
       <div id="links" class="col-8 align-self-center"> <!--  shadow-sm -->
           <Links v-for="link in listLinks" :key="link.id" :linkFrom="link"/>
       </div>
     </div>
     <div class="mt-auto"></div>
     <Editor/>
+    <Launcher/>
     <!-- <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div id="logo"> <!--  shadow-sm -->
+  <div id="logo" class="mb-5"> <!--  shadow-sm -->
       <img alt="Google" height="92" src="assets/googlelogo_color_272x92dp.png" width="272">
   </div>
 </template>

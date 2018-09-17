@@ -1,8 +1,17 @@
 <template>
-  <div class="collapse position-absolute bg-white shadow-lg" id="collapseEditor">
-      <ul id="listApps2">
-        <li class="list-item d-inline-block" v-for="i in 7" v-bind:key=i><a href="#" class="item-a">Item {{ i }}</a></li>
-      </ul> 
+  <div class="container-fluid collapse position-absolute bg-white shadow-lg" id="collapseEditor">
+      <div class="row justify-content-center"><!-- justify-content-center -->
+        <div class="col-6 text-left"> <!-- align-self-center  bg-info  is-invalid  is-valid-->  
+              <input type="text" class="form-control form-control-sm mt-3" id="inpitLink" placeholder="Insert Link"  autofocus>
+              <button type="button" class="close position-absolute bg-white t-10" aria-label="Close" title="Clear form">
+                <span aria-hidden="true" class="p-2">&times;</span>
+              </button>
+              <input type="text" class="form-control form-control-sm mt-3 mb-3" id="inpitTitle" placeholder="Insert Title">
+              <button type="button" class="close position-absolute bg-white t-30" aria-label="Close" title="Clear form">
+                <span aria-hidden="true" class="p-2">&times;</span>
+              </button>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -23,22 +32,13 @@ div#collapseEditor {
   left: 0; /* у гул 8 */
 }
 
-ul#listApps2 {
-  margin: 0;
-  padding: 28px 27px 28px 28px;
+.t-10 {
+  top: 20px;
+  right: 16px;
 }
 
-li.list-item {
-  list-style: none;
-  width: 86px;
-  height: 98px;
-  padding: 1px;
-  vertical-align: top;
-}
-
-a.item-a {
-  margin: 8px 2px;
-  text-align: center;
-  outline: none;
+.t-30 {
+  top: 67px;
+  right: 16px;
 }
 </style>

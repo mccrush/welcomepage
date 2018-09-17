@@ -92,7 +92,7 @@ export default {
             if (target.getAttribute('href') !== '#') {
               window.location.href = target.getAttribute('href');
             } else {
-              console.log(1, target.getAttribute('href'));
+              console.log(2, target.getAttribute('href'));
             }
           } else {
             target = target.parentNode;
@@ -100,7 +100,7 @@ export default {
               if (target.getAttribute('href') !== '#') {
                 window.location.href = target.getAttribute('href');
               } else {
-                console.log(1, target.getAttribute('href'));
+                console.log(3, target.getAttribute('href'));
               }
             }
           }
