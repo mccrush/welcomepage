@@ -8,7 +8,7 @@
     </div>
     <!-- <div class="edit invisible" title="Изменить ссылку" v-on:click.self="evEdit">
     </div> -->
-    <div class="edit invisible" title="Изменить ссылку" v-on:click.self="evEdit" data-toggle="collapse" href="#collapseEditor" aria-expanded="false" aria-controls="collapseEditor">
+    <div class="edit invisible" title="Изменить ссылку" v-on:click.self="evEdit(linkFrom)" data-toggle="collapse" href="#collapseEditor" aria-expanded="false" aria-controls="collapseEditor">
     </div>
     <div class="clear invisible" title="Удалить ссылку" v-on:click.self="evClear">
     </div>
@@ -20,6 +20,7 @@
 function ale() {
   alert('Griby');
 }
+import { eventEmitter } from '../main.js';
 
 export default {
   name: 'links',
@@ -107,9 +108,9 @@ export default {
         }
       }
     },
-    evEdit: function() {
-      console.log('yes edit Call');
-
+    evEdit: function(linkFrom) {
+      //console.log('yes edit = ' + linkFrom);
+      eventEmitter.$emit('show-form', linkFrom);
       //return true;
       //document.getElementById('collapseEditor').classList.remove('collapse');
     },
