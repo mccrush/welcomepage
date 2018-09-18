@@ -8,8 +8,8 @@
     </div>
     <!-- <div class="edit invisible" title="Изменить ссылку" v-on:click.self="evEdit">
     </div> -->
-    <div class="edit invisible" title="Изменить ссылку" v-on:click.self="evEdit(linkFrom)" data-toggle="collapse" href="#collapseEditor" aria-expanded="false" aria-controls="collapseEditor">
-    </div>
+    <div class="edit invisible" title="Изменить ссылку" v-on:click.self="evEdit(linkFrom)">
+    </div><!-- data-toggle="collapse" href="#collapseEditor" aria-expanded="false" aria-controls="collapseEditor" -->
     <div class="clear invisible" title="Удалить ссылку" v-on:click.self="evClear">
     </div>
     <img :src=linkFrom.thumb :alt=linkFrom.title class="thumb" width="154" height="96">
@@ -111,6 +111,7 @@ export default {
     evEdit: function(linkFrom) {
       //console.log('yes edit = ' + linkFrom);
       eventEmitter.$emit('show-form', linkFrom);
+      $('#collapseEditor').collapse('show');
       //return true;
       //document.getElementById('collapseEditor').classList.remove('collapse');
     },

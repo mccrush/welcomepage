@@ -1,6 +1,6 @@
 <template>
   <div class="nav-scroller bg-white"> <!--  shadow-sm -->
-      <nav class="nav justify-content-end">
+      <nav class="nav justify-content-end" v-on:click.self="hideAll">
         <a class="nav-link" href="https://mail.google.com/mail/?tab=wm">Почта</a>
         <a class="nav-link" href="https://www.google.ru/imghp?hl=ru&tab=wi">Картинки</a>
         <form class="form-inline">
@@ -15,6 +15,12 @@ export default {
   name: 'Header',
   props: {
     msg: String
+  },
+  methods: {
+    hideAll: function() {
+      $('#collapseLauncher').collapse('hide');
+      $('#collapseEditor').collapse('hide');
+    }
   }
 };
 </script>
