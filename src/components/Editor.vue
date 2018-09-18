@@ -2,11 +2,11 @@
   <div class="container-fluid collapse position-absolute bg-white shadow-lg" id="collapseEditor">
       <div class="row justify-content-center"><!-- justify-content-center -->
         <div class="col-6 text-left"> <!-- align-self-center  bg-info  is-invalid  is-valid-->  
-              <input type="text" class="form-control form-control-sm mt-3" id="inpitLink" placeholder="Insert Link"  autofocus v-on:keyup.enter="closeEditor" v-model.trim="href" v-on:input="saveChange">
+              <input type="text" class="form-control form-control-sm mt-3" id="inpitLink" placeholder="Insert Link"  autofocus v-on:keyup.enter="closeEditor" v-model.trim="href" v-on:input="onChange">
               <button type="button" class="close position-absolute bg-white t-10" aria-label="Close" title="Clear form">
                 <span aria-hidden="true" class="p-2" v-on:click.self="clearHref">&times;</span>
               </button>
-              <input type="text" class="form-control form-control-sm mt-3 mb-3" id="inpitTitle" placeholder="Insert Title" v-on:keyup.enter="closeEditor" v-model.trim="title"  v-on:input="saveChange">
+              <input type="text" class="form-control form-control-sm mt-3 mb-3" id="inpitTitle" placeholder="Insert Title" v-on:keyup.enter="closeEditor" v-model.trim="title"  v-on:input="onChange">
               <button type="button" class="close position-absolute bg-white t-30" aria-label="Close" title="Clear form">
                 <span aria-hidden="true" class="p-2" v-on:click.self="clearTitle">&times;</span>
               </button>
@@ -18,6 +18,7 @@
 <script>
 // :value=this.title
 import { eventEmitter } from '../main.js';
+//import { validForm } from '../core/control.js';
 import { saveHref, saveTitle } from '../core/datasave.js';
 
 export default {
@@ -32,6 +33,7 @@ export default {
   created() {
     eventEmitter.$on('show-form', linkFrom => {
       //console.log('yes inedit = ' + linkFrom);
+      document.getElementById('inpitLink').classList.remove('is-invalid');
       this.id = linkFrom.id;
       this.href = linkFrom.href;
       this.title = linkFrom.title;
@@ -43,21 +45,32 @@ export default {
       //document.getElementById('inpitLink').value = '';
       //document.getElementById('inpitLink').placeholder = '';
       document.getElementById('inpitLink').focus();
+      document.getElementById('inpitLink').classList.add('is-invalid');
+      document.getElementById('inpitLink').placeholder =
+        'Поле не может быть пустым';
     },
     clearTitle: function() {
       this.title = '';
-      //document.getElementById('inpitTitle').value = '';
-      //document.getElementById('inpitTitle').placeholder = '';
       document.getElementById('inpitTitle').focus();
     },
     closeEditor: function() {
       $('#collapseEditor').collapse('hide');
-      saveHref(this.href);
-      saveTitle(this.title);
     },
-    saveChange: function() {
-      saveHref(this.href);
-      saveTitle(this.title);
+    onChange: function() {
+      if (this.title !== '' && this.href === '') {
+        document.getElementById('inpitLink').classList.add('is-invalid');
+        document.getElementById('inpitLink').placeholder =
+          'Поле не может быть пустым';
+      } else {
+        document.getElementById('inpitLink').classList.remove('is-invalid');
+        document.getElementById('inpitLink').placeholder = 'Insert Link';
+        if (this.title === '') {
+          // Загружаем Заголовок с интернета
+          // this.title = ...
+        }
+        saveHref(this.href);
+        saveTitle(this.title);
+      }
       //console.log(document.getElementById('inpitTitle').value);
     }
   }

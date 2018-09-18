@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { loadList } from './components/storage.js';
+import { loadList } from './core/storage.js';
 import Header from './components/Header.vue';
 import Launcher from './components/Launcher.vue';
 import Logo from './components/Logo.vue';
