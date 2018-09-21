@@ -67,6 +67,31 @@ export default {
         if (this.title === '') {
           // Загружаем Заголовок с интернета
           // this.title = ...
+          let adres = this.href;
+          if (adres.search(/https:\/\//) !== -1) {
+            adres = adres.replace('https://', '');
+            console.log('After knife: ' + adres);
+          } else if (adres.search(/http:\/\//) !== -1) {
+            adres = adres.replace('http://', '');
+            console.log('After knife: ' + adres);
+          } else {
+            adres = adres;
+            console.log('After knife: ' + adres);
+          }
+
+          // var xhr = new XMLHttpRequest();
+          // xhr.open(
+          //   'GET',
+          //   'https://textance.herokuapp.com/rest/title/' + adres,
+          //   false
+          // );
+          // xhr.send();
+          // if (xhr.status != 200) {
+          //   this.title = '';
+          //   console.log(xhr.status + ': ' + xhr.statusText);
+          // } else {
+          //   this.title = xhr.responseText;
+          // }
         }
         saveHref(this.href);
         saveTitle(this.title);
