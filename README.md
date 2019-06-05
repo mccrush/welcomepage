@@ -1,24 +1,16 @@
 # WelcomePage
-<strong>version 2.2.0</strong><br>
-Web application "WelcomePage" - Start page for Google Chrome browser<br>
-<a href="https://chrome.google.com/webstore/detail/welcomepage/jigianpegfcffonfkgmailhacnccobaj" target="_blank">Available in the Chrome Web Store</a>
 
-## Project setup
-```
-npm install
-```
+**Тип:** приложение Google Chrome 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+**Версия:** 2.2.0 от 21.09.2018
 
-### Compiles and minifies for production
-```
-npm run build
-```
+**Установть:** [Chrome Web Store](https://chrome.google.com/webstore/detail/welcomepage/jigianpegfcffonfkgmailhacnccobaj)
 
-### Lints and fixes files
-```
-npm run lint
-```
+WelcomePage - стартовая страница Google Chrome.
+
+**Что нового в версии 2.2.0:**
+-исправлена проблема кодировки;
+-доработан механизм добавления закладок;
+-исправлены мелкие ошибки и добавлены новые.
+
+Расширенные настройки новой вкладки Google Chrome. Теперь вы можете самостоятельно указывать ссылки на часто посещаемые сайты.
